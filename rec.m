@@ -16,7 +16,8 @@ function [g] = rec(hHat, Li, Lw, Lcit, tau, fs, t60)
 %       g : equalizing filters
 %
 % Authors: F. Lim, W. Zhang
-
+%
+% Copyright (C) Imperial College London 2009-2010
 
 [L, M] = size(hHat);
 

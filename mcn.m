@@ -20,7 +20,7 @@ function [h_hat, R_hat, J] = mcn(xin, h_hat, R_hat, rho, lamda)
 %   References:
 %       [1] Y. Huang and J. Benesty, "Adaptive multi-channel mean square and
 %           Newton algorithms for blind channel identification", Signal Process.,
-%           vol. 83, no. 8, pp.1127-1138 Aug 2002
+%           vol. 83, no. 8, pp. 1127-1138, Aug 2002
 %
 % Authors: N.D. Gaubitch, E.A.P. Habets
 %
@@ -28,8 +28,7 @@ function [h_hat, R_hat, J] = mcn(xin, h_hat, R_hat, rho, lamda)
 %        : 2004-10-18 Minor changes by N.D. Gaubitch
 %        : 2009-07-10 Minor changes by E.A.P. Habets
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: mcn.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2003-2010
 
 error(nargchk(3,5,nargin));
 

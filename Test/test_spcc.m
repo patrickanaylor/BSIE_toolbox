@@ -17,7 +17,6 @@
 % History: 2010-03-23 Initial version by EH
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: test_spcc.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 

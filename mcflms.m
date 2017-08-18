@@ -35,8 +35,7 @@ function [h_hat, J] = mcflms(xm, h_hat, mu, ss_cntr)
 %   History: 2006-03-29 Initial version by N. D. Gaubitch
 %            2009-07-11 Minor Changes by E.A.P. Habets
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: mcflms.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2006-2010
 
 error(nargchk(2,4,nargin));
 

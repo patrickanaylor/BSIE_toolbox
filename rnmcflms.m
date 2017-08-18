@@ -32,7 +32,6 @@ function [h_hat, P_k_avg, J] = rnmcflms(xm, h_hat, P_k_avg, rho, lambda, delta)
 %   History: 2009-08-05 Initial version by E.A.P. Habets
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: rnmcflms.m 425 2011-08-12 09:15:01Z mrt102 $
 
 error(nargchk(3,6,nargin));
 

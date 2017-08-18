@@ -6,7 +6,6 @@
 % History: 2011-01-24 Initial version
 %
 % Copyright (C) Imperial College London 2009-2011
-% Version: $Id: test_rmcls.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc
 clear
@@ -19,7 +18,7 @@ L = 512;   % channel length
 Li = L-1;
 Lw = 128;
 k = 0;
-tau=0;
+tau = 0;
 iter = 600;
 a = 1.00145;
 w = [ones(k+1,1); a.^(1:L+Li-2-k)'-1];

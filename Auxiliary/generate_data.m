@@ -40,8 +40,7 @@ function [h, x, tdoa, s, src_pos, mic_pos, z] = generate_data(M, L, fs, air, N, 
 %          2010-11-29 MRPT: Noise and source seeds set by argument.
 %          2011-03-01 RIRs are now computed correctly.
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: generate_data.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2009-2011
 
 error(nargchk(4,8,nargin));
 

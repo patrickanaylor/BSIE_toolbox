@@ -21,7 +21,6 @@ function [h_hat, P_k] = init_nmcflms(L, F, M, xm0, h_hat0)
 %          2010-03-27 Fixed initialization of P_k
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: init_nmcflms.m 425 2011-08-12 09:15:01Z mrt102 $
 
 error(nargchk(3,5,nargin));
 

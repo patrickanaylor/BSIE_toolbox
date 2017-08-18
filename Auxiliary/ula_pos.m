@@ -17,8 +17,7 @@ function micPos = ula_pos(micSpc,micNum,CenPos)
 %
 % History: 2007 Inital version by A. Kong
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: ula_pos.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2007-2010
 
 linArray = 0:micSpc:micSpc*(micNum-1);  % generate linear array
 arrayCen = linArray(end)/2;  % find array centroid

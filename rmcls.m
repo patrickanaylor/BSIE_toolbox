@@ -14,6 +14,8 @@ function [g] = rmcls(h_hat, Li, Lw, k)
 %       g     : equalization filters [Li x M] 
 %
 % Authors: W. Zhang
+%
+% Copyright (C) Imperial College London 2009-2010
 
 [L, M] = size(h_hat);
 

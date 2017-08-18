@@ -24,7 +24,6 @@ function ie = generate_sie(h, npm, mode, T60, fs)
 % History: 2009-07-13 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: generate_sie.m 425 2011-08-12 09:15:01Z mrt102 $
 
 [L M] = size(h);
 re = zeros(L, M);

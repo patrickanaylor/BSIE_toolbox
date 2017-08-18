@@ -12,7 +12,6 @@
 % History: 2010-04-15 Initial version by EH
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: test_mcss.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clear; 
 close all;
@@ -33,8 +32,8 @@ air.src_pos = [100*pi/180 2*pi/180 2];  % source location
 air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 h = generate_data(M, L, fs, air, N, SNR);
 
-% %theta = pi/10; % IC
-% %phi = pi/10; % IC
+% theta = pi/10; % IC
+% phi = pi/10; % IC
 % theta = pi/10; % WC
 % phi = 2*pi/3; % WC
 % h(:,1) = [1 -2*cos(theta) 1]';

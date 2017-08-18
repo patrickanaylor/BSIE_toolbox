@@ -17,7 +17,6 @@
 % History: 2009-09-02 Initial version by EH
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_mclms_simple.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 

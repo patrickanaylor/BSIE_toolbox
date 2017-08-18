@@ -1,7 +1,6 @@
 function plot_filter(h, h_hat)
 
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: plot_filter.m 425 2011-08-12 09:15:01Z mrt102 $
 
 h_norm = h(:, 1)./max(abs(h(:, 1)));
 h_hat_norm = h_hat(:, 1)./max(abs(h_hat(:, 1)));

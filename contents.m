@@ -35,9 +35,7 @@
 %   rdp                 - Remove Direct-Path Propagation
 %   ula_pos             - Sensor Positions of a Uniform Linear Array
 %
-%   Copyright (C) Imperial College London 2009-2010-2010
-%
-%      Last modified $Date: 2010/03/25 12:04:43 $
+%   Copyright (C) Imperial College London 2009-2011
 %
 %   BSIE is a MATLAB toolbox for acoustic signal processing.
 %
@@ -56,4 +54,3 @@
 %   ftp://prep.ai.mit.edu/pub/gnu/COPYING-2.0 or by writing to
 %   Free Software Foundation, Inc.,675 Mass Ave, Cambridge, MA 02139, USA.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-

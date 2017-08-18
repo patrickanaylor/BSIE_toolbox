@@ -37,8 +37,7 @@ function [IdxCm, chCm, dist]= compdist(zr,tol,opdist)
 %          23rd May 07- removed eps tolerence @ 80
 %          09th Jul 07- include dist output option
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: compdist.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2007-2010
 
 [len,TotCh]    = size(zr);
 

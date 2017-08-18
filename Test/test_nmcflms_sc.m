@@ -16,7 +16,6 @@
 % History: 2010-03-27 Initial version
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: test_nmcflms_sc.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear;
@@ -81,10 +80,10 @@ title(['L= ',num2str(L), ', \rho= ',num2str(rho), ...
     ', \lambda= ',num2str(lambda), ', SNR= ', ...
     num2str(SNR), ', M= ', num2str(M)]);
 
-% figure(2); plot_J(J, fs);  % cost function
-% legend('NMCFLMS','NMCFLMS-SC');
-% title(['L= ',num2str(L), ', \rho= ',num2str(rho), ...
-%     ', \lambda= ',num2str(lambda), ', SNR= ', ...
-%     num2str(SNR), ', M= ', num2str(M)]);
+figure(2); plot_J(J, fs);  % cost function
+legend('NMCFLMS','NMCFLMS-SC');
+title(['L= ',num2str(L), ', \rho= ',num2str(rho), ...
+    ', \lambda= ',num2str(lambda), ', SNR= ', ...
+    num2str(SNR), ', M= ', num2str(M)]);
 
-% figure(3); plot_filter(h,h_hat(:,:,2));  % filter coeff.
+figure(3); plot_filter(h,h_hat(:,:,2));  % filter coeff.

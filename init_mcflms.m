@@ -17,7 +17,6 @@ function [h_hat] = init_mcflms(L, M, h_hat0)
 % History: 2009-07-10 Initial version by E.A.P. Habets
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: init_mcflms.m 425 2011-08-12 09:15:01Z mrt102 $
 
 error(nargchk(2,3,nargin));
 

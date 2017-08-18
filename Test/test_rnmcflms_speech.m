@@ -21,7 +21,6 @@
 % History: 2009-07-10 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_rnmcflms_speech.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 

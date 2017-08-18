@@ -20,7 +20,7 @@ function [h_hat, J] = mclms(xin, h_hat, mu, ss_cntr)
 %   References:
 %       [1] Y. Huang and J. Benesty, "Adaptive multi-channel mean square and
 %           Newton algorithms for blind channel identification", Signal Process.,
-%           vol. 83, no. 8, pp.1127-1138 Aug 2002
+%           vol. 83, no. 8, pp. 1127-1138, Aug 2002
 %
 % Authors:  N.D. Gaubitch, E.A.P. Habets
 %
@@ -29,8 +29,7 @@ function [h_hat, J] = mclms(xin, h_hat, mu, ss_cntr)
 %           2009-08-24 - For real and complex input vectors by EH
 %                        Does not work with vss-normlized and vss!
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: mclms.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2004-2010
 
 error(nargchk(3,4,nargin));
 

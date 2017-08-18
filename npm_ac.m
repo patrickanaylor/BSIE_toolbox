@@ -14,14 +14,13 @@ function [npm_val] = npm_ac(h, hhat)
 %	References:
 %       [1] D. R. Morgan, J. Benesty and M. M. Sondhi, "On the evaluation of
 %           estimated impulse responses," IEEE Signal Processing Lett., Vol. 5, No.
-%           7, pp. 174-176 Jul 1998.
+%           7, pp. 174-176, Jul 1998.
 %
 % Authors: E.A.P. Habets 
 %
 % History: 2010-04-16 - added alignment correction to npm.m (EH)
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: npm_ac.m 425 2011-08-12 09:15:01Z mrt102 $
 
 if size(hhat,1) <= size(h,1)
     hv = reshape(h(1:size(hhat,1),:),[],1);

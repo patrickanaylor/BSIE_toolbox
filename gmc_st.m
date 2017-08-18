@@ -24,14 +24,13 @@ function [ClustMtx,ClustMem,ClustNum] = gmc_st(zr,tol)
 %           zeros in multichannel blind system identification and
 %           equalization," in Proc. IEEE Intl. Conf. Acoust.,
 %           Speech, Signal Processing (ICASSP), Las Vegas, USA,
-%           Apr. 2008, pp. 389?392.
+%           Apr. 2008, pp. 389-392.
 %
 % Authors: A. Kong
 %
 % History: 2007-07-05 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: gmc_st.m 425 2011-08-12 09:15:01Z mrt102 $
 
 [len, totCh] = size(zr);
 
