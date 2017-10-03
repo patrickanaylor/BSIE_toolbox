@@ -19,7 +19,7 @@
 
 clc;
 clear;
-%close all;
+close all;
 
 %% Initialization
 M = 5;          % number of channels
@@ -42,7 +42,7 @@ air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 
 x = [zeros(L,M); x];
 
-% Initiailize MCLMS_SC
+% Initialize MCLMS_SC
 [h_hat(:,:,1), P_k_avg(:,:,1)] = init_nmcflms(L, F, M, x(1:F,:));
 [h_hat(:,:,2), P_k_avg(:,:,2), Pn] = init_nmcflms_sc(L, F, M, x(1:F,:));
 ns = F-L+1;

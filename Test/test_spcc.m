@@ -31,16 +31,16 @@ N_ittr = 10; % number of itterations
 SNR = 30;
 
 %% Generate impulse responses
-%theta = pi/10; % IC
-%phi = pi/10; % IC
-theta = pi/10; % WC
-phi = 2*pi/3; % WC
+% theta = pi/10; % Ill Conditioned System
+% phi = pi/10; % Ill Conditioned System
+theta = pi/10; % Well Conditioned System
+phi = 2*pi/3; % Well Conditioned System
 h(:,1) = [1 -2*cos(theta) 1]';
 h(:,2) = [1 -2*cos(theta+phi) 1]';
 h(:,3) = [1 -2*cos(theta+2*phi) 1]';
 
 %% Generate signals
-RandStream.setDefaultStream(RandStream('mt19937ar', 'Seed', 1));
+RandStream.setGlobalStream(RandStream('mt19937ar', 'Seed', 1));
 s = randi(2,1,N);   % Generate N length of either 0 or 1.
 s = s - mean(s);
 for i = 1:M

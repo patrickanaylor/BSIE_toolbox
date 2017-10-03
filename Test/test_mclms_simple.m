@@ -32,35 +32,35 @@ mu = .4;            % step-size
 
 %% Generate simple impulse responses
 theta = pi/10;
-phi = pi/10; % IC
-%phi = 2*pi/3; % WC
+phi = pi/10; % Ill Conditioned System
+% phi = 2*pi/3; % Well Conditioned System
 
 h(:,1) = [1 -2*cos(theta) 1]';
 h(:,2) = [1 -2*cos(theta+phi) 1]';
 h(:,3) = [1 -2*cos(theta+2*phi) 1]';
 
 %% Generate signals
-s = randint(1,N);   % Generate D length of either 0 or 1.
+s = randi([0,1],[1,N]);   % Generate D length of either 0 or 1.
 s = s - mean(s);
 for i = 1:M
     x(:,i) = filter(h(:,i),1,s);
     x(:,i) = awgn(x(:,i),SNR(i));
 end
 
-%% Initiailize MCLMS
-global R_hat;
-R_hat = zeros(L*M,L*M);
-for tf=1:N-L+1
-    xin = x(tf:tf+L-1,:);
-    R_hat = 0.98 * R_hat + (1-0.98) * xin(:)*xin(:)';
-end
+%% Initialize MCLMS
+% global R_hat;
+% R_hat = zeros(L*M,L*M);
+% for tf=1:N-L+1
+%     xin = x(tf:tf+L-1,:);
+%     R_hat = 0.98 * R_hat + (1-0.98) * xin(:)*xin(:)';
+% end
 [xin, h_hat] = init_mclms(L, M);
 npm_dB = zeros(N,1);
 J = zeros(N,1);
 
 %% Processing Loop: run MCLMS [2]
 wbar = waitbar(0,'MCLMS');
-ss_cntr = {'fixed','normalized','vss'};
+ss_cntr = {'fixed','vss-unconstrained','vss'};
 h_hat = repmat(h_hat,[1 1 length(ss_cntr)]);
 for nn = 1 : N
     waitbar(nn/N);
@@ -78,9 +78,8 @@ close(wbar);
 
 %% Plot results
 figure(1); 
-phandle = plot_npm(npm_dB, fs,1);
-lhandle = addmarkers(phandle,20);
-legend(lhandle,['MCLMS' strcat(ss_cntr(2:end),'-MCLMS')]);
+phandle = plot_npm(npm_dB, fs, 1, '-o', 'MarkerIndices',1:floor(length(npm_dB)/20):length(npm_dB));
+legend(['MCLMS' strcat(ss_cntr(2:end),'-MCLMS')]);
 title(['L= ',num2str(L), ', \mu= ',num2str(mu), ...
     ', SNR= ',num2str(SNR), ', M= ', num2str(M)]);
 

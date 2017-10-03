@@ -38,7 +38,7 @@ ie = generate_sie(h,-30,'prop');
 h_tilde = h + ie;
 
 % Check the NPM level for h_tilde
-display(sprintf('NPM for h_tilde: %d dB\n',20*log10(npm(h,h_tilde))));
+fprintf('NPM for h_tilde: %d dB\n\n',20*log10(npm(h,h_tilde)));
 
 %% Load room impulse responses
 % load ../Data/ht_3_C;
@@ -64,7 +64,7 @@ legend('First channel','Equalized channel');
 
 figure(2)
 subplot(211);
-[md md_all] = magnitude_deviation(er);
+[md, md_all] = magnitude_deviation(er);
 plot(md_all);
 axis tight;
 grid on;
@@ -74,7 +74,7 @@ ylabel('Distortion (dB)');
 
 figure(2)
 subplot(212);
-[pd pd_all] = phase_deviation(er);
+[pd, pd_all] = phase_deviation(er);
 plot(pd_all);
 axis tight;
 grid on;

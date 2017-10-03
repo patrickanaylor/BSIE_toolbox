@@ -41,7 +41,7 @@ function [IdxCm, chCm, dist]= compdist(zr,tol,opdist)
 
 [len,TotCh]    = size(zr);
 
-if lower(opdist)=='n';
+if lower(opdist)=='n'
     dist    = zeros(len,len);
     ch1Bg   = zeros(len,len);
     ch2Bg   = zeros(len,len);
@@ -50,8 +50,8 @@ if lower(opdist)=='n';
     IdxCm = [];
     chCm  = [];
     
-    for chA= 1:TotCh;
-        for chB= 1:TotCh;
+    for chA= 1:TotCh
+        for chB= 1:TotCh
             
             ch1 = zr(:,chA);
             ch2 = zr(:,chB);
@@ -64,7 +64,7 @@ if lower(opdist)=='n';
             
             clear ch1Bg;
             clear ch2Bg;
-            if chA<chB;
+            if chA<chB
                 [IdxCmTp,chCmTp] = ...
                     xtrctCm(chA,chB,dist,IdxCm,chCm,tol);
                 IdxCm = [IdxCm; IdxCmTp];
@@ -79,12 +79,12 @@ if lower(opdist)=='n';
     
     
 else
-    dist    = zeros(TotCh.^2,TotCh.^2,len,len);
+    dist  = zeros(TotCh.^2,TotCh.^2,len,len);
     IdxCm = [];
     chCm  = [];
     
-    for chA= 1:TotCh;
-        for chB= 1:TotCh;
+    for chA= 1:TotCh
+        for chB= 1:TotCh
             
             ch1 = zr(:,chA);
             ch2 = zr(:,chB);
@@ -98,7 +98,7 @@ else
             clear ch1Bg;
             clear ch2Bg;
             
-            if chA<chB;
+            if chA<chB
                 [IdxCmTp,chCmTp] = ...
                     xtrctCm(chA,chB,squeeze(dist(chA,chB,:,:)),IdxCm,chCm,tol);
                 IdxCm = [IdxCm; IdxCmTp];
@@ -122,11 +122,11 @@ for i= 1:size(data,1)
     indx2  = [indx2 struct('lesTolIdx',find(data(i,:)<=tol))];
 end
 
-for i=1:length(indx2);
+for i=1:length(indx2)
     indx2tp = indx2(i).lesTolIdx;
     indx1tp = repmat(i,length(indx2tp),1);
     IdxCmTp  = [IdxCmI; indx1tp indx2tp'];
-    if ~isempty(IdxCmTp);
+    if ~isempty(IdxCmTp)
         len         = size(indx1tp,1);
         chCmTp      = [chA chB];
         chCmTp      = repmat(chCmTp,len,1);

@@ -40,12 +40,12 @@ h = generate_data(M, L, fs, air, N, SNR);
 % h(:,2) = [1 -2*cos(theta+phi) 1]';
 % h(:,3) = [1 -2*cos(theta+2*phi) 1]';
 
-% RandStream.setDefaultStream(RandStream('mt19937ar', 'Seed', 3));
+% RandStream.setGlobalStream(RandStream('mt19937ar', 'Seed', 3));
 % h = randn(L,M);
 % h = h ./ norm(h,2);
 
 %% Generate signals
-RandStream.setDefaultStream(RandStream('mt19937ar', 'Seed', 1));
+RandStream.setGlobalStream(RandStream('mt19937ar', 'Seed', 1));
 s = randi(2,1,N);   % Generate N length of either 0 or 1.
 s = s - mean(s);
 for i = 1:M
@@ -58,10 +58,10 @@ for i = 1:M
 end
 
 %% Processing Loop: run MCLS
-%methods = {'Moulines'};
+% methods = {'Moulines'};
 methods = {'Moulines','Moulines_constraint'};
 npm_dB = zeros(length(methods),2);
-%h_hat = zeros(L,M,length(methods));
+% h_hat = zeros(L,M,length(methods));
 D = 0; % Over-estimate with D coefficients
 for mm = 1:length(methods)
     % Overestimate but given the correct channel order
@@ -75,9 +75,9 @@ for mm = 1:length(methods)
 end
 
 %% Plot results
-display('NPM');
+fprintf('NPM\n');
 for mm = 1:length(methods)
-    display(sprintf([methods{mm} ' : %.2f / %.2f dB'], npm_dB(mm,:)));
+    fprintf([methods{mm} ' : %.2f / %.2f dB\n'], npm_dB(mm,:));
 end
 
 NFFT=2^nextpow2(L+1);

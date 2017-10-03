@@ -48,7 +48,7 @@ for Mk_idx = 1:length(Mks)
     npm_dB_all = [];
     
     for rho_idx = 1:length(rho)
-        % Initiailize NMCMDFLMS
+        % Initialize NMCMDFLMS
         [shMDF h_hat] = init_nmcmdflms(L, Ms, Mch, x);
         
         ns = Ns/2; % number of new samples per iteration

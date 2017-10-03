@@ -30,7 +30,7 @@ function [h_hat, R_hat, J] = mcn(xin, h_hat, R_hat, rho, lamda)
 %
 % Copyright (C) Imperial College London 2003-2010
 
-error(nargchk(3,5,nargin));
+narginchk(3,5);
 
 L = size(h_hat,1);
 M = size(xin,2);

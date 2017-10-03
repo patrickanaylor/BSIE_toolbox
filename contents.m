@@ -1,30 +1,39 @@
 % BSIE: Blind System Identification and Equalization Toolbox
 %
 % Initialize Blind Adaptive System Identification
-%   init_mclms     - Initialize Multichannel Least Mean Squares
-%   init_mcn       - Initialize Multichannel Newton
-%   init_mcflms    - Initialize Multichannel Frequency Domain LMS
-%   init_nmcflms   - Initialize Normalized MCFLMS
-%   init_rnmcflms  - Initialize Robust NMCFLMS
+%   init_mclms      - Initialize Multichannel Least Mean Squares
+%   init_mcn        - Initialize Multichannel Newton
+%   init_mcflms     - Initialize Multichannel Frequency Domain LMS
+%   init_nmcflms    - Initialize Normalized MCFLMS
+%   init_nmcflms_sc - Initialize Normalized MCFLMS with Spectral Constraint
+%   init_nmcmdflms  - Initialize Normalized Multichannel MDF LMS
+%   init_rnmcflms   - Initialize Robust NMCFLMS
 %
 % Blind System Identification
-%   mcss           - Multichannel Subspace Algorithm
+%   mcss            - Multichannel Subspace Algorithm
 %
 % Blind Adaptive System Identification
-%   mclms          - Multichannel Least Mean Squares Algorithm
-%   mcn            - Multichannel Newton Algorithm
-%   mcflms         - Multichannel Frequency Domain LMS Algorithm
-%   nmcflms        - Normalized MCFLMS Algorithm
-%   rnmcflms       - Robust NMCFLMS Algorithm
-%
+%   mclms           - Multichannel Least Mean Squares Algorithm
+%   mcn             - Multichannel Newton Algorithm
+%   mcflms          - Multichannel Frequency Domain LMS Algorithm
+%   nmcflms         - Normalized MCFLMS Algorithm
+%   nmcflms_sc      - Normalized MCFLMS with Spectral Constraint Algorithm
+%   nmcmdflms       - Normalized Multichannel MDF LMS Algorithm
+%   rnmcflms        - Robust NMCFLMS Algorithm
+%   
 % System Equalization
 %   lsinvfilt           - Compute Least Squares Inverse Filter
 %   wls                 - Compute Weighted LS Filter
 %   wls_iterative       - Compute Iterative Weighted LS Filter
 %   channel_shortening  - Compute Channel Shortening Filter
+%   rmcls               - Compute Relaxed Multichannel LS Filter
+%   rcic                - Compute RMCLS Filter with Constrained Initial Coefficients
+%   rec                 - Compute RMCLS Filter with Envelope Constraint
 %
 % Performance Evaluation and Analyses
-%   mpn                 - Normalized Projection Misalignment:
+%   edc                 - Compute Energy Decay Curve
+%   npm                 - Normalized Projection Misalignment
+%   npm_ac              - NPM with Alignment Correction
 %   magnitude_deviation - Compute Magnitude Deviation
 %   phase_deviation     - Compute Phase Distortion
 %   gmc_st              - Generalized Multichannel Clustering
@@ -37,7 +46,7 @@
 %
 %   Copyright (C) Imperial College London 2009-2011
 %
-%   BSIE is a MATLAB toolbox for acoustic signal processing.
+%   BSIE is a MATLAB toolbox for blind SIMO identification and equalization
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   This program is free software; you can redistribute it and/or modify

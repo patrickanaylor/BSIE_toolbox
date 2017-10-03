@@ -7,7 +7,7 @@ if nargin < 3
 end  
 
 ax  = 1/fs : ns/fs : length(npm_dB)*ns/fs;
-phandle = plot(ax, npm_dB,varargin{:}); 
+phandle = plot(ax, npm_dB, varargin{:}); 
 grid on; 
 xlabel('Time (s)'); 
 ylabel('NPM (dB)'); 

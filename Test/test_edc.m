@@ -34,5 +34,5 @@ ylabel('EDC (dB)');
 grid on;
 
 for ii=1:length(mymeas)
-    fprintf('%s: %f\n%',mymeas{ii},meas(ii));
+    fprintf('%s: %f\n',mymeas{ii},meas(ii));
 end

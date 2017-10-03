@@ -20,7 +20,7 @@ function [xin, h_hat] = init_mclms(L, M, xin0, h_hat0)
 %
 % Copyright (C) Imperial College London 2009-2010
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 if nargin > 2 && ~isempty(xin0)
    if size(xin0,1) ~= L || size(xin0,2) ~= M

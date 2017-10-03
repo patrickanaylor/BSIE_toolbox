@@ -22,7 +22,7 @@ function [h_hat, P_k] = init_rnmcflms(L, F, M, xm0, h_hat0)
 %
 % Copyright (C) Imperial College London 2009-2010
 
-error(nargchk(3,5,nargin));
+narginchk(3,5);
 
 if nargin > 3 && ~isempty(xm0)
     if size(xm0,1) == F && size(xm0,2) == M

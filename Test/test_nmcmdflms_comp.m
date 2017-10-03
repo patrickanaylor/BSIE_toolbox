@@ -49,7 +49,7 @@ for Mk = 2
     npm_dB_NMCFLMS_all = [];
     
     for rho_idx = 1:size(rho,2)
-        % Initiailize NMCMDFLMS
+        % Initialize NMCMDFLMS
         [shMDF h_hat] = init_nmcmdflms(L, Ms, Mch, x);
         
         ns = Ns/2; % number of new samples per iteration
@@ -79,7 +79,7 @@ for Mk = 2
 end
 
 for rho_idx = 1:size(rho,2)
-    % Initiailize NMCFLMS
+    % Initialize NMCFLMS
     [h_hat, P_k_avg] = init_nmcflms(L, F, Mch, x(1:F,:));
     
     ns = F-L;

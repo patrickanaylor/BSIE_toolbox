@@ -20,7 +20,7 @@ function [h_hat, R_hat] = mcss(x,L,Lc,method)
 %
 % Copyright (C) Imperial College London 2010
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 if ~exist('method','var');
     method = 'moulines';

@@ -43,6 +43,6 @@ end
 % clear ZeroMtx;
 
 % Find clusters of near-common zeros using GMC-ST
-display(sprintf('\nRunning GMC-ST...'))
+fprintf('Running GMC-ST...\n')
 [ClustMtx, ClustMem, ClustNum]  = gmc_st(zr, tol);
-display(sprintf('GMC-ST: %d',ClustNum));
+fprintf('GMC-ST: %d\n',ClustNum);

@@ -37,7 +37,7 @@ function [h_hat, J] = mcflms(xm, h_hat, mu, ss_cntr)
 %
 % Copyright (C) Imperial College London 2006-2010
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 % Initialization
 L = size(h_hat,1);

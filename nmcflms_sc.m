@@ -39,7 +39,7 @@ function [h_hat, P_k_avg, Pn, J] = nmcflms_sc(xm, h_hat, P_k_avg, Pn, rho, lambd
 %
 % Copyright (C) Imperial College London 2010
 
-error(nargchk(4,7,nargin));
+narginchk(4,7);
 
 % Initialization
 L = size(h_hat,1);

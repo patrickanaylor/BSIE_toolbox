@@ -41,7 +41,7 @@ air.src_pos = [100*pi/180 2*pi/180 2];  % source location
 air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 [h, x] = generate_data(M, L, fs, air, N, SNR, s_seed, v_seed);
 
-% Initiailize MCLMS
+% Initialize MCLMS
 [h_hat] = init_mcflms(L, M);
 ns = F-L+1;  % number of new samples per iteration
 B = fix(N/ns);  % number of input blocks of length L
@@ -68,9 +68,8 @@ close(wbar);
 %% Plot results
 % NPM
 figure(1); 
-phandle = plot_npm(npm_dB, fs, ns);
-lhandle = addmarkers(phandle,20);
-legend(lhandle,['MCFLMS' strcat(ss_cntr(2:end),'-MCFLMS')]);
+phandle = plot_npm(npm_dB, fs, ns, '-o', 'MarkerIndices',1:floor(length(npm_dB)/20):length(npm_dB));
+legend(['MCFLMS' strcat(ss_cntr(2:end),'-MCFLMS')]);
 title(['L= ',num2str(L), ', \mu= ',num2str(mu), ...
     ', SNR= ',num2str(SNR), ', M= ', num2str(M)]);
 

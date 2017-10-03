@@ -18,7 +18,7 @@ function [h_hat] = init_mcflms(L, M, h_hat0)
 %
 % Copyright (C) Imperial College London 2009-2010
 
-error(nargchk(2,3,nargin));
+narginchk(2,3);
 
 if nargin > 2 && ~isempty(h_hat0)
     if size(h_hat0,1) == L && size(h_hat0,2) == M

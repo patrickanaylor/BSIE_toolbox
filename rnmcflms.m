@@ -33,7 +33,7 @@ function [h_hat, P_k_avg, J] = rnmcflms(xm, h_hat, P_k_avg, rho, lambda, delta)
 %
 % Copyright (C) Imperial College London 2009-2010
 
-error(nargchk(3,6,nargin));
+narginchk(3,6);
 
 % Initialization
 L = size(h_hat,1);

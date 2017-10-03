@@ -8,7 +8,7 @@ function [h_hat, J] = mclms(xin, h_hat, mu, ss_cntr)
 %       xin     : input vector [N x M]
 %       h_hat   : current filter coef. matrix [L x M]
 %       mu      : step-size
-%       ss_cntr : type of step-size control (optional: default 'normalized'):
+%       ss_cntr : type of step-size control (optional: default 'fixed'):
 %                 'fixed' - fixed with unit-norm-constrained;
 %                 'vss-unconstrained' - variable step-size;
 %                 'vss' - variable step-size
@@ -31,7 +31,7 @@ function [h_hat, J] = mclms(xin, h_hat, mu, ss_cntr)
 %
 % Copyright (C) Imperial College London 2004-2010
 
-error(nargchk(3,4,nargin));
+narginchk(3,4);
 
 if nargin < 4
     ss_cntr = 'fixed';

@@ -20,7 +20,7 @@ function [h_hat, R_hat] = mcls(x,L,method,h_hat)
 %
 % Copyright (C) Imperial College London 2010
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 if ~exist('method','var');
     method = 'xu';
