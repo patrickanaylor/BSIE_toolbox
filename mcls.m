@@ -19,9 +19,8 @@ function [h_hat, R_hat] = mcls(x,L,method,h_hat)
 % History: 2010-03-05 Initial version by E.A.P. Habets
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: mcls.m 425 2011-08-12 09:15:01Z mrt102 $
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 if ~exist('method','var');
     method = 'xu';

@@ -21,7 +21,6 @@ function [g] = channel_shortening(h_hat, Li, Lw, k)
 % History: 2009-07-06 - Initial version by W. Zhang
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: channel_shortening.m 425 2011-08-12 09:15:01Z mrt102 $
 
 % Initialization
 [L M]= size(h_hat);

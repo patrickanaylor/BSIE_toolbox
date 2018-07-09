@@ -20,9 +20,8 @@ function [shMDF H_hat] = init_nmcmdflms(L, Ms, Mch, xm0, H_hat0)
 % History: 2011-03-01 Initial version
 %
 % Copyright (C) Bar-Ilan University 2011
-% Version: $Id: init_nmcmdflms.m 425 2011-08-12 09:15:01Z mrt102 $
 
-error(nargchk(2,5,nargin));
+narginchk(2,5);
 
 if rem(2*L,Ms) ~= 0
    error('Segment length (2*L/Ms) needs to be an integer number.');

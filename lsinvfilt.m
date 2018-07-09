@@ -30,7 +30,6 @@ function [g] = lsinvfilt(h_hat, Li, k)
 % History: 2009-07-06 - Initial version by W. Zhang
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: lsinvfilt.m 425 2011-08-12 09:15:01Z mrt102 $
 
 [L, M] = size(h_hat);
 

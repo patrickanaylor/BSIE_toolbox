@@ -6,16 +6,15 @@
 %   [1] J. Allen and D. Berkley, "Image method for
 %       efficiently simulating small room acoustics",
 %       JASA, 1979.
-%   [2] R. Ahmad, A. W. H. Khong, and P. Naylor, “Proportionate frequency
-%       domain adaptive algorithms for blind channel identification,” in
-%       Proc. ICASSP, Toulouse, France, May 2006, vol. 5, pp. 29–32.
+%   [2] R. Ahmad, A. W. H. Khong, and P. Naylor, "Proportionate frequency
+%       domain adaptive algorithms for blind channel identification," in
+%       Proc. ICASSP, Toulouse, France, May 2006, vol. 5, pp. 29-32.
 %
 % Authors: E.A.P. Habets
 %
 % History: 2011-03-01 Initial version
 %
 % Copyright (C) Imperial College London 2011
-% Version: $Id: test_nmcmdflms_comp.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear;
@@ -50,7 +49,7 @@ for Mk = 2
     npm_dB_NMCFLMS_all = [];
     
     for rho_idx = 1:size(rho,2)
-        % Initiailize NMCMDFLMS
+        % Initialize NMCMDFLMS
         [shMDF h_hat] = init_nmcmdflms(L, Ms, Mch, x);
         
         ns = Ns/2; % number of new samples per iteration
@@ -80,7 +79,7 @@ for Mk = 2
 end
 
 for rho_idx = 1:size(rho,2)
-    % Initiailize NMCFLMS
+    % Initialize NMCFLMS
     [h_hat, P_k_avg] = init_nmcflms(L, F, Mch, x(1:F,:));
     
     ns = F-L;

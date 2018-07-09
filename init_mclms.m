@@ -19,9 +19,8 @@ function [xin, h_hat] = init_mclms(L, M, xin0, h_hat0)
 % History: 2009-07-10 Initial version by E.A.P. Habets
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: init_mclms.m 425 2011-08-12 09:15:01Z mrt102 $
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 if nargin > 2 && ~isempty(xin0)
    if size(xin0,1) ~= L || size(xin0,2) ~= M

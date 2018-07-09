@@ -21,7 +21,6 @@ function [h]  = rdp(h_unc, toa)
 %          2011-03-01 RIRs are now padded with zeros.
 %
 % Copyright (C) Imperial College London 2009-2011
-% Version: $Id: rdp.m 425 2011-08-12 09:15:01Z mrt102 $
 
 [L,M] = size(h_unc);
 

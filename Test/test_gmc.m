@@ -11,7 +11,6 @@
 % History: 2009-07-14 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_gmc.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear;
@@ -44,6 +43,6 @@ end
 % clear ZeroMtx;
 
 % Find clusters of near-common zeros using GMC-ST
-display(sprintf('\nRunning GMC-ST...'))
+fprintf('Running GMC-ST...\n')
 [ClustMtx, ClustMem, ClustNum]  = gmc_st(zr, tol);
-display(sprintf('GMC-ST: %d',ClustNum));
+fprintf('GMC-ST: %d\n',ClustNum);

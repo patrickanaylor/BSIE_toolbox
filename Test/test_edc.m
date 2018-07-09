@@ -5,7 +5,6 @@
 % History: 2010-11-29 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_edc.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc
 clear
@@ -35,5 +34,5 @@ ylabel('EDC (dB)');
 grid on;
 
 for ii=1:length(mymeas)
-    fprintf('%s: %f\n%',mymeas{ii},meas(ii));
+    fprintf('%s: %f\n',mymeas{ii},meas(ii));
 end

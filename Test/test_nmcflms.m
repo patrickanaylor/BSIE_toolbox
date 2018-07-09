@@ -16,11 +16,10 @@
 % History: 2009-07-10 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_nmcflms.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 
-%close all;
+close all;
 
 %% Initialization
 M = 5;          % number of channels
@@ -43,7 +42,7 @@ air.src_pos = [100*pi/180 2*pi/180 2];  % source location
 air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 [h, x] = generate_data(M, L, fs, air, N, SNR, s_seed, v_seed);
 
-% Initiailize NMCFLMS
+% Initialize NMCFLMS
 [h_hat, P_k_avg] = init_nmcflms(L, F, M, x(1:F,:));
 ns = F-L+1;
 B = fix(N/ns);  % number of input blocks of length L

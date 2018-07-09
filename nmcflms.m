@@ -37,10 +37,9 @@ function [h_hat, P_k_avg, J] = nmcflms(xm, h_hat, P_k_avg, rho, lambda, delta)
 %   History: 2006-03-29 Initial version by N. D. Gaubitch
 %            2009-07-11 Minor Changes by E.A.P. Habets
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: nmcflms.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2006-2010
 
-error(nargchk(3,6,nargin));
+narginchk(3,6);
 
 % Initialization
 L = size(h_hat,1);

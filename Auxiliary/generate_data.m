@@ -40,10 +40,9 @@ function [h, x, tdoa, s, src_pos, mic_pos, z] = generate_data(M, L, fs, air, N, 
 %          2010-11-29 MRPT: Noise and source seeds set by argument.
 %          2011-03-01 RIRs are now computed correctly.
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: generate_data.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2009-2011
 
-error(nargchk(4,8,nargin));
+narginchk(4,8);
 
 if ~isfield(air,'rcv_pos')
     % Determine source and sensor positions
@@ -92,7 +91,7 @@ if nargin > 4 && nargout > 1
         s = randn(N, 1);
     else
         if(length(s)==1)
-            RandStream.setDefaultStream(RandStream('mt19937ar', 'Seed',s));
+            RandStream.setGlobalStream(RandStream('mt19937ar', 'Seed', s));
             s = randn(N, 1);
         elseif(isempty(s))
             s=randn(N,1);
@@ -109,7 +108,7 @@ if nargin > 4 && nargout > 1
         if (~exist('v','var'))
             v = randn(N,M);
         elseif(length(v)==1)
-            RandStream.setDefaultStream(RandStream('mt19937ar', 'Seed',v));
+            RandStream.setGlobalStream(RandStream('mt19937ar', 'Seed', v));
             v = randn(N, M);
         end
         v = sqrt(var(s)*norm(h(:),2).^2 / (10^(SNR/10)*M*mean(var(v)))).*v;

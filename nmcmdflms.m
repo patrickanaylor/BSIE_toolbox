@@ -35,14 +35,13 @@ function [shMDF, H_hat, e_iijj] = nmcmdflms(shMDF, xm, rho, lambda, delta)
 %   References:
 %   [1] R. Ahmad, A. W. H. Khong, and P. Naylor, "Proportionate frequency
 %       domain adaptive algorithms for blind channel identification," in
-%       Proc. ICASSP, Toulouse, France, May 2006, vol. 5, pp. 29–32.
+%       Proc. ICASSP, Toulouse, France, May 2006, vol. 5, pp. 29-32.
 %
 % Authors: B. Castro, S. Gannot and E.A.P. Habets
 %
 % History: 2011-03-01 Initial version
 %
 % Copyright (C) Bar-Ilan University 2011
-% Version: $Id: nmcmdflms.m 425 2011-08-12 09:15:01Z mrt102 $
 
 % Initialization
 F = size(xm,1);

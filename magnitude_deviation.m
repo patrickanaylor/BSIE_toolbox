@@ -18,8 +18,7 @@ function [emag emag_freq] = magnitude_deviation(heq, NFFT)
 %          2007-03-12 Minor changes by N.D. Gaubitch
 %          2009-07-10 NFFT option by E.A.P. Habets
 %
-% Copyright (C) Imperial College London 2009-2010
-% Version: $Id: magnitude_deviation.m 425 2011-08-12 09:15:01Z mrt102 $
+% Copyright (C) Imperial College London 2006-2010
 
 % Initialization
 L = length(heq);

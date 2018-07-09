@@ -40,7 +40,6 @@ function [decay, varargout] = edc(h, fs, varargin)
 %       J. Acoust. Soc. Am., vol. 37 pp 409-412, 1965.
 %
 % Copyright (C) Imperial College London 2004-2010
-% Version: $Id:
 
 % Calculate EDC
 h = flipud(h(:).^2);

@@ -21,9 +21,8 @@ function [h_hat, P_k, Pn] = init_nmcflms_sc(L, F, M, xm0, h_hat0)
 % History: 2010-03-27 Initial version by E.A.P. Habets
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: init_nmcflms_sc.m 425 2011-08-12 09:15:01Z mrt102 $
 
-error(nargchk(3,5,nargin));
+narginchk(3,5);
 
 if nargin > 3 && ~isempty(xm0)
     if size(xm0,1) == F && size(xm0,2) == M

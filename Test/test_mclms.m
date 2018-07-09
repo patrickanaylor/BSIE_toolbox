@@ -18,7 +18,6 @@
 %          2009-07-10 Major changes by EH
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_mclms.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 
@@ -29,7 +28,7 @@ M = 5;      % number of channels
 fs = 8e3;   % sampling frequency
 L = 128;    % channel length
 SNR = 30;   % signal to noise ratio (dB)
-N = 10*fs;  % data length (samples)
+N = 4*fs;   % data length (samples)
 s_seed = 1; % seed for generating source signal
 v_seed = 50;% seed for generating noise signal
 mu = .8;    % step-size
@@ -43,7 +42,7 @@ air.src_pos = [100*pi/180 2*pi/180 2];  % source location
 air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 [h, x] = generate_data(M, L, fs, air, N, SNR, s_seed, v_seed);
 
-% Initiailize MCLMS
+% Initialize MCLMS
 [xin, h_hat] = init_mclms(L, M);
 npm_dB = zeros(N,1);
 J = zeros(N,1);
@@ -64,9 +63,8 @@ close(wbar);
 
 %% Plot results
 figure(1); 
-phandle = plot_npm(npm_dB, fs,1);
-lhandle = addmarkers(phandle,20);
-legend(lhandle,['MCLMS' strcat(ss_cntr(2:end),'-MCLMS')]);
+phandle = plot_npm(npm_dB, fs, 1, '-o', 'MarkerIndices',1:floor(length(npm_dB)/20):length(npm_dB));
+legend(['MCLMS' strcat(ss_cntr(2:end),'-MCLMS')]);
 title(['L= ',num2str(L), ', \mu= ',num2str(mu), ...
     ', SNR= ',num2str(SNR), ', M= ', num2str(M)]);
 

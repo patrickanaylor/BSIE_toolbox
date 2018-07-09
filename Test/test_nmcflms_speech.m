@@ -17,7 +17,6 @@
 % History: 2009-07-10 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_nmcflms_speech.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 
@@ -43,13 +42,13 @@ h = generate_data(M, L, fs, air);
 
 % Load source signal
 N = 18*fs;  % Simulation time in seconds
-[s, fs_wav] = wavread([datapath 'male_english_8k.wav']);
+[s, fs_wav] = audioread([datapath 'male_english_8k.wav']);
 if fs_wav ~= fs
     error('Incorrect sample frequency.');
 end
 s = s(1:N);
 % Add small amount of noise to source signal to improve stability
-RandStream.setDefaultStream(RandStream('mt19937ar','Seed',1));
+RandStream.setGlobalStream(RandStream('mt19937ar','Seed',1));
 va = randn(size(s,1), 1);
 va = sqrt(var(s)/(10^(40/10)*mean(var(va)))) .* va;
 s = s + va;
@@ -57,12 +56,12 @@ s = 0.9 * s' / max(abs(s));
 
 % Calculate noisy sensor signals with correct SNR
 z = fftfilt(h, s);
-RandStream.setDefaultStream(RandStream('mt19937ar','Seed',50));
+RandStream.setGlobalStream(RandStream('mt19937ar','Seed',50));
 v = randn(N, M);  % Generate additive noise
 v = sqrt(var(s)*norm(h(:),2).^2/(10^(SNR/10)*M*mean(var(v)))) .* v;
 x = z + v;
 
-% Initiailize MCLMS
+% Initialize MCLMS
 [h_hat, P_k_avg] = init_nmcflms(L, F, M, x(1:F,:));
 ns = L/8;  % number of new samples per iteration
 B = fix(N/ns);  % number of input blocks of length L

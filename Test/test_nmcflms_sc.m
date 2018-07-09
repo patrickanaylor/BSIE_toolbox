@@ -16,11 +16,10 @@
 % History: 2010-03-27 Initial version
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: test_nmcflms_sc.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear;
-%close all;
+close all;
 
 %% Initialization
 M = 5;          % number of channels
@@ -43,7 +42,7 @@ air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 
 x = [zeros(L,M); x];
 
-% Initiailize MCLMS_SC
+% Initialize MCLMS_SC
 [h_hat(:,:,1), P_k_avg(:,:,1)] = init_nmcflms(L, F, M, x(1:F,:));
 [h_hat(:,:,2), P_k_avg(:,:,2), Pn] = init_nmcflms_sc(L, F, M, x(1:F,:));
 ns = F-L+1;
@@ -81,10 +80,10 @@ title(['L= ',num2str(L), ', \rho= ',num2str(rho), ...
     ', \lambda= ',num2str(lambda), ', SNR= ', ...
     num2str(SNR), ', M= ', num2str(M)]);
 
-% figure(2); plot_J(J, fs);  % cost function
-% legend('NMCFLMS','NMCFLMS-SC');
-% title(['L= ',num2str(L), ', \rho= ',num2str(rho), ...
-%     ', \lambda= ',num2str(lambda), ', SNR= ', ...
-%     num2str(SNR), ', M= ', num2str(M)]);
+figure(2); plot_J(J, fs);  % cost function
+legend('NMCFLMS','NMCFLMS-SC');
+title(['L= ',num2str(L), ', \rho= ',num2str(rho), ...
+    ', \lambda= ',num2str(lambda), ', SNR= ', ...
+    num2str(SNR), ', M= ', num2str(M)]);
 
-% figure(3); plot_filter(h,h_hat(:,:,2));  % filter coeff.
+figure(3); plot_filter(h,h_hat(:,:,2));  % filter coeff.

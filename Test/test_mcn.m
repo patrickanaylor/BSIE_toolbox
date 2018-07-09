@@ -17,7 +17,6 @@
 % History: 2009-07-10 Initial version
 %
 % Copyright (C) Imperial College London 2009-2010
-% Version: $Id: test_mcn.m 425 2011-08-12 09:15:01Z mrt102 $
 
 clc;
 clear; 
@@ -43,7 +42,7 @@ air.src_pos = [100*pi/180 2*pi/180 2];  % source location
 air.cen_pos = [2.5; 2; 1.6];  % centre pos. of the array
 [h, x] = generate_data(M, L, fs, air, N, SNR, s_seed, v_seed);
 
-% Initiailize MCLMS
+% Initialize MCLMS
 [xin, h_hat, R_hat] = init_mcn(L, M, [x(1,:) ; ...
     zeros(L-1,M)]);
 npm_dB = zeros(N, 1);

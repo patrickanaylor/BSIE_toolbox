@@ -19,9 +19,8 @@ function [h_hat, R_hat] = mcss(x,L,Lc,method)
 % History: 2010-04-15 Initial version by E.A.P. Habets
 %
 % Copyright (C) Imperial College London 2010
-% Version: $Id: mcss.m 425 2011-08-12 09:15:01Z mrt102 $
 
-error(nargchk(2,4,nargin));
+narginchk(2,4);
 
 if ~exist('method','var');
     method = 'moulines';
